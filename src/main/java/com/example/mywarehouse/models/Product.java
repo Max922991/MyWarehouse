@@ -25,7 +25,7 @@ public class Product {
     Long id;
 
     @Column(name = "name")
-    @NotEmpty(message = "The field must not be empty")
+    @NotBlank(message = "The field must not be empty")
     String name;
 
     @Column(name = "buy")

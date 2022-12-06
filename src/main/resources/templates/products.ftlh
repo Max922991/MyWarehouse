@@ -5,11 +5,15 @@
 </head>
 <body>
 <h1>WareHouse</h1>
-<#list products as product>
-    <div>
-        <p><b>${product.name}</b> ${product.buy} ${product.sale} | <a href="/product/${product.id}">Операции с товаром..</a></p>
-    </div>
-</#list>
+<#if products? has_content>
+    <#list products as product>
+        <div>
+            <p><b>${product.name}</b> ${product.buy} ${product.sale} | <a href="/product/${product.id}">Операции с товаром..</a></p>
+        </div>
+    </#list>
+    <#else>
+    <p>The DataBase is empty</p>
+</#if>
 <hr>
 <h3>Создать новый товар</h3>
 <form action="/product/create" method="post">
@@ -27,3 +31,4 @@
 <hr>
 </body>
 </html>
+
